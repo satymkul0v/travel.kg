@@ -1,12 +1,21 @@
 import React from 'react'
 import './ArslanBap.css'
-import Arslanbap from '/assets/yssykkol1.png'
+import Video from '/assets/video.mp4'
+
+
 
 function ArslanBap() {
   return (
     <div className='arslan'>
-    <img src={Arslanbap} alt="" />
-    </div>
+      <h1>ABOUT KYRGYZSTAN</h1>
+
+      <div className='storis'>
+      <video  className='video1'autoPlay muted loop width='350px' height='400px'>
+          <source  src={Video} type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        </div>
+      </div>
   )
 }
 
