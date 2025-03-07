@@ -14,7 +14,7 @@ function App() {
         <Home/>
         {/* <Kocho/> */}
         <ArslanBap/>
-        {/* <Footer/> */}
+        <Footer/>
      
       </div>
 
