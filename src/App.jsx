@@ -4,6 +4,9 @@ import ArslanBap from './Components/Home/AlaToo1/ArslanBap.jsx'
 import Footer from './Components/Home/AlaToo2/Footer.jsx'
 
 
+import Stories from './Components/Home/Storis/Stories.jsx'
+
+
 function App() {
 
 
@@ -14,7 +17,8 @@ function App() {
         <Home/>
         {/* <Kocho/> */}
         <ArslanBap/>
-        <Footer/>
+        {/* <Footer/> */}
+        <Stories/>
      
       </div>
 
