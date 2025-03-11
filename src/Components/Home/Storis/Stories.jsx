@@ -1,39 +1,118 @@
-import './Stories.css';
-import React, { useState } from "react";
+import "./Stories.css";
+import React, { useState, useEffect } from "react";
 
 const storiesData = [
-  { type: "video", src: "assets/karakamysh.MP4" },
-  { type: "video", src: "assets/video.mp4" },
-  { type: "video", src: "assets/chunkur.MP4"},
-  { type: "video", src: "assets/jeti.MP4"}
+  {
+    id: 1,
+    preview: "assets/sary1.png",
+    media: [
+      { type: "image", src: "assets/yssykkol.png" },
+      { type: "video", src: "assets/jeti.MP4" },
+      { type: "image", src: "assets/gory1.png" },
+      { type: "video", src: "assets/video.mp4" },
+    ],
+  },
+  {
+    id: 2,
+    preview: "assets/trek.png",
+    media: [
+      { type: "video", src: "assets/video3.mp4" },
+      { type: "image", src: "assets/image3.jpg" },
+    ],
+  },
+  {
+    id: 3,
+    preview: "assets/yssykkol.png",
+    media: [
+      { type: "image", src: "assets/image4.jpg" },
+      { type: "video", src: "assets/video4.mp4" },
+      { type: "video", src: "assets/video5.mp4" },
+    ],
+  },
 ];
 
 export default function Stories() {
   const [activeStory, setActiveStory] = useState(null);
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [isManual, setIsManual] = useState(false); // Флаг для ручного переключения
+
+  const handleOpenStory = (story) => {
+    setActiveStory(story);
+    setCurrentMediaIndex(0);
+    setIsManual(false); // Сброс ручного режима при открытии истории
+  };
+
+  const handleNextMedia = () => {
+    if (activeStory && currentMediaIndex < activeStory.media.length - 1) {
+      setCurrentMediaIndex(currentMediaIndex + 1);
+    } else {
+      setActiveStory(null);
+    }
+    setIsManual(true); // Если нажали кнопку, выключаем авто-смену
+  };
+
+  const handlePrevMedia = () => {
+    if (currentMediaIndex > 0) {
+      setCurrentMediaIndex(currentMediaIndex - 1);
+    }
+    setIsManual(true); // Если нажали кнопку, выключаем авто-смену
+  };
+
+  // Авто-переключение изображений (если не было ручного вмешательства)
+  useEffect(() => {
+    if (!activeStory || isManual) return;
+
+    const currentMedia = activeStory.media[currentMediaIndex];
+
+    if (currentMedia.type === "image") {
+      const timer = setTimeout(() => {
+        handleNextMedia();
+      }, 3000); // 3 секунды на изображение
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeStory, currentMediaIndex, isManual]);
 
   return (
-    <div className="stories-container">
-      {storiesData.map((story, index) => (
-        <div key={index} className="story-preview" onClick={() => setActiveStory(story)}>
-          {story.type === "image" ? (
-            <img src={story.src} alt="story" />
-          ) : (
-            <video src={story.src} muted playsInline autoPlay loop />
-          )}
-        </div>
-      ))}
+    <div className="blok1">
+      <h1>Kyrgyzstan Stories</h1>
+      <div className="stories-container">
+        {storiesData.map((story) => (
+          <div key={story.id} className="story-preview" onClick={() => handleOpenStory(story)}>
+            <img src={story.preview} alt="Story Preview" />
+          </div>
+        ))}
+      </div>
 
       {activeStory && (
         <div className="fullscreen-story" onClick={() => setActiveStory(null)}>
-          {activeStory.type === "image" ? (
-            <img src={activeStory.src} alt="story" />
+          {activeStory.media[currentMediaIndex].type === "image" ? (
+            <img src={activeStory.media[currentMediaIndex].src} alt="Story" />
           ) : (
-            <video src={activeStory.src} autoPlay controls />
+            <video
+              src={activeStory.media[currentMediaIndex].src}
+              autoPlay
+              controls
+              onEnded={handleNextMedia}
+            />
           )}
+
           <button className="close-btn" onClick={(e) => { 
-              e.stopPropagation();
-              setActiveStory(null);
-          }}>×</button>
+            e.stopPropagation();
+            setActiveStory(null);
+          }}>
+            ×
+          </button>
+
+          {/* Кнопки переключения */}
+          <div className="story-controls">
+            <button onClick={handlePrevMedia} disabled={currentMediaIndex === 0}>
+              ⬅ Prev
+            </button>
+            <button onClick={handleNextMedia}>
+              Next ➡
+            </button>
+          </div>
         </div>
       )}
     </div>
