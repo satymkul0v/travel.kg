@@ -4,25 +4,26 @@ import React, { useState, useEffect } from "react";
 const storiesData = [
   {
     id: 1,
-    preview: "assets/sary1.png",
+    preview: "assets/jalalabad1.png",
     media: [
-      { type: "image", src: "assets/yssykkol.png" },
-      { type: "video", src: "assets/video.mp4" },
-      { type: "video", src: "assets/jeti.MP4" },
-      { type: "video", src: "assets/video.mp4" },
+      { type: "image", src: "assets/chatkal.png" },
+      { type: "video", src: "assets/karakamysh.MP4" },
+      { type: "image", src: "assets/alabuka.png" },
+      { type: "video", src: "assets/sary.MP4" },
     ],
   },
   {
     id: 2,
-    preview: "assets/trek.png",
+    preview: "assets/ysssyk.jpg",
     media: [
-      { type: "video", src: "assets/video3.mp4" },
-      { type: "image", src: "assets/image3.jpg" },
+      { type: "video", src: "assets/yssyk.mp4" },
+      { type: "image", src: "assets/ik.jpg" },
+      { type: 'video', src: 'assets/jeti.MP4'},
     ],
   },
   {
     id: 3,
-    preview: "assets/yssykkol.png",
+    preview: "assets/naryn.jpg",
     media: [
       { type: "image", src: "assets/image4.jpg" },
       { type: "video", src: "assets/video4.mp4" },

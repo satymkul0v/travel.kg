@@ -1,4 +1,16 @@
-.stories-container {
+.blok1 {
+  background-image: url('assets/storiess.png');
+  height: 70vh;
+  background-size: cover; /* Заполняет весь экран */
+  background-position: center; /* Центрирует изображение */
+  background-repeat: no-repeat; 
+}
+
+.blok1 h1{
+  color: #66fcf1;
+  text-align: center;
+  padding-bottom: 3%;
+}.stories-container {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -6,11 +18,13 @@
 
 .story-preview {
   width: 150px;
-  height: 250px;
+  height: 180px;
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s;
+  border: 1.5px solid #fff;
+
   
 }
 
@@ -35,6 +49,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+ 
 
 }
 
