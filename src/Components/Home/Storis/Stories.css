@@ -42,6 +42,7 @@
 .fullscreen-story video {
   width: 90%;
   height: 80vh;
+  object-fit: contain; /* Сохраняем пропорции */
 }
 
 .close-btn {

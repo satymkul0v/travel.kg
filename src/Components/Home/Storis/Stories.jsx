@@ -106,13 +106,28 @@ export default function Stories() {
 
           {/* Кнопки переключения */}
           <div className="story-controls">
-            <button className="batton" onClick={handlePrevMedia} disabled={currentMediaIndex === 0}>
-              ⬅ Prev
-            </button>
-            <button className="batton" onClick={handleNextMedia}>
-              Next ➡
-            </button>
-          </div>
+  <button 
+    className="batton" 
+    onClick={(e) => { 
+      e.stopPropagation(); // предотвращаем закрытие истории
+      handlePrevMedia(); 
+    }} 
+    disabled={currentMediaIndex === 0}
+  >
+    ⬅ Prev
+  </button>
+
+  <button 
+    className="batton" 
+    onClick={(e) => { 
+      e.stopPropagation(); // предотвращаем закрытие истории
+      handleNextMedia(); 
+    }}
+  >
+    Next ➡
+  </button>
+</div>
+
         </div>
       )}
     </div>
