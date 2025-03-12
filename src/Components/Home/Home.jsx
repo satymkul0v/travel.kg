@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="weerBlok">
       <div className="img-style">
         <img src={images[location]} alt="Kyrgyzstan Landscape" />
         <h1>VISIT KYRGYZSTAN <br />{text1[location]}</h1> 
