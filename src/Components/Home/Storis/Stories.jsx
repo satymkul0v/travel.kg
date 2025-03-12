@@ -30,6 +30,43 @@ const storiesData = [
       { type: "video", src: "assets/video5.mp4" },
     ],
   },
+  {
+    id: 4,
+    preview: "assets/naryn.jpg",
+    media: [
+      { type: "image", src: "assets/image4.jpg" },
+      { type: "video", src: "assets/video4.mp4" },
+      { type: "video", src: "assets/video5.mp4" },
+    ],
+  },
+  {
+    id: 5,
+    preview: "assets/ysssyk.jpg",
+    media: [
+      { type: "video", src: "assets/yssyk.mp4" },
+      { type: "image", src: "assets/ik.jpg" },
+      { type: 'video', src: 'assets/jeti.MP4'},
+    ],
+  },
+  {
+    id: 6,
+    preview: "assets/jalalabad1.png",
+    media: [
+      { type: "image", src: "assets/chatkal.png" },
+      { type: "video", src: "assets/karakamysh.MP4" },
+      { type: "image", src: "assets/alabuka.png" },
+      { type: "video", src: "assets/sary.MP4" },
+    ],
+  },
+  {
+    id: 7,
+    preview: "assets/naryn.jpg",
+    media: [
+      { type: "image", src: "assets/image4.jpg" },
+      { type: "video", src: "assets/video4.mp4" },
+      { type: "video", src: "assets/video5.mp4" },
+    ],
+  },
 ];
 
 export default function Stories() {

@@ -11,10 +11,19 @@
   color: #66fcf1;
   text-align: center;
   padding-bottom: 3%;
-}.stories-container {
+}
+
+.stories-container {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  padding-left: 5%; /* Добавляем отступ слева, чтобы первый элемент не прилипал к краю */
+  scroll-padding-left: 5%; /* Говорим скроллу учитывать этот отступ */
+  padding-top: 3%;
+  padding-bottom: 3%;
+  
 }
 
 .story-preview {
@@ -23,9 +32,12 @@
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
   border: 1.5px solid #fff;
-
+  flex: 0 0 auto; /* Элементы не сжимаются */
+  margin-right: 10px; /* Отступ между элементами */
+  scroll-snap-align: start; /* Прилипание по началу элемента */
+  scroll-snap-align: start;
   
 }
 
