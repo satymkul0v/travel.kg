@@ -5,6 +5,8 @@ import Footer from './Components/Home/AlaToo2/Footer.jsx'
 
 
 import Stories from './Components/Home/Storis/Stories.jsx'
+import Karta from './Components/Home/Karta/Karta.jsx'
+import AboutUs from './Components/Home/AboutUs/AboutUs.jsx'
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <ArslanBap/>
         {/* <Footer/> */}
         <Stories/>
+        <Karta/>
+        <AboutUs/>
      
       </div>
 
