@@ -7,8 +7,8 @@ const storiesData = [
     preview: "assets/sary1.png",
     media: [
       { type: "image", src: "assets/yssykkol.png" },
+      { type: "video", src: "assets/video.mp4" },
       { type: "video", src: "assets/jeti.MP4" },
-      { type: "image", src: "assets/gory1.png" },
       { type: "video", src: "assets/video.mp4" },
     ],
   },
@@ -106,10 +106,10 @@ export default function Stories() {
 
           {/* Кнопки переключения */}
           <div className="story-controls">
-            <button onClick={handlePrevMedia} disabled={currentMediaIndex === 0}>
+            <button className="batton" onClick={handlePrevMedia} disabled={currentMediaIndex === 0}>
               ⬅ Prev
             </button>
-            <button onClick={handleNextMedia}>
+            <button className="batton" onClick={handleNextMedia}>
               Next ➡
             </button>
           </div>

@@ -11,6 +11,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s;
+  
 }
 
 .story-preview:hover {
@@ -34,12 +35,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
 }
 
 .fullscreen-story img, 
 .fullscreen-story video {
-  max-width: 90%;
-  max-height: 80vh;
+  width: 90%;
+  height: 80vh;
 }
 
 .close-btn {
@@ -47,10 +49,16 @@
   top: 20px;
   right: 20px;
   background: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: #66fcf1;
   border: none;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
+}
+
+
+.batton {
+  color: #66fcf1;
+  width: 100px;
 }
