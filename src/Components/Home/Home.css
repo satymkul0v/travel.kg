@@ -23,14 +23,14 @@
     position: absolute;
     font-size: 40px;
     bottom: 0;
-    padding-bottom: 60%;
+    padding-bottom: 70%;
 }
 
 .img-style hr {
     position: absolute;
     width: 80%;
     bottom: 0;
-    margin-bottom: 50%;
+    margin-bottom: 60%;
     
 }
 .img-style h6{
@@ -79,7 +79,7 @@
 
 .button {
     position: absolute;
-    bottom: 7%;
+    bottom: 0%;
     padding: 10px;
     font-size: 15px;
     border-radius: 5px;
