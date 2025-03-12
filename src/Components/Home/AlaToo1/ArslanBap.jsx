@@ -14,7 +14,7 @@ function ArslanBap() {
           Ваш браузер не поддерживает видео.
         </video>
 
-          <h2>all the beauty of Kyrgyzstan</h2>
+   
         </div>
       </div>
   )
